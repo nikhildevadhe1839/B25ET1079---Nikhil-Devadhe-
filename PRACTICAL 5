@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int minimum(int a, int b)
+{
+    return (a < b) ? a : b;
+}
+
+float minimum(float a, float b)
+{
+    return (a < b) ? a : b;
+}
+
+int main()
+{
+    int x, y;
+    float p, q;
+
+    cout << "Enter two integers: ";
+    cin >> x >> y;
+    cout << "Minimum integer = " << minimum(x, y) << endl;
+
+    cout << "Enter two floating-point numbers: ";
+    cin >> p >> q;
+    cout << "Minimum floating-point number = " << minimum(p, q) << endl;
+
+    return 0;
+}
