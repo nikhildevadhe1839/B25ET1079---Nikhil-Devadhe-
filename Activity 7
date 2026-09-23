@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Class to implement a String
+class String
+{
+    string str;  // Data member to store the string
+
+public:
+    // Parameterized constructor to initialize the string
+    String(string s)
+    {
+        str = s;
+    }
+
+    // Function to accept a string from the user
+    void Accept()
+    {
+        cout << "Enter a string: ";
+        cin >> str;
+    }
+
+    // Function to display the string
+    void Display()
+    {
+        cout << "The string is: " << str << endl;
+    }
+};
+
+int main()
+{
+    // Create an object using the parameterized constructor
+    String s1("Hello");
+
+    // Accept a new string from the user
+    s1.Accept();
+
+    // Display the string
+    s1.Display();
+
+    return 0;
+}
