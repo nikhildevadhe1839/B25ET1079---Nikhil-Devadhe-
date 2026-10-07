@@ -1,0 +1,68 @@
+#include <iostream>                 // Include the input-output stream library
+#include <string>                   // Include the string library
+using namespace std;                // Use the standard namespace
+
+// Base class to store employee basic information
+class Employee
+{
+protected:
+    int empId;                      // Declare variable to store employee ID
+    string name;                    // Declare variable to store employee name
+
+public:
+    void getBasicInfo()             // Function to accept basic information
+    {
+        cout << "Enter Employee ID: ";       // Display message for employee ID
+        cin >> empId;                       // Accept employee ID from user
+
+        cout << "Enter Employee Name: ";     // Display message for employee name
+        cin >> name;                         // Accept employee name from user
+    }
+};
+
+// Base class to store employee experience information
+class Experience
+{
+protected:
+    int years;                      // Declare variable to store years of experience
+
+public:
+    void getExperience()            // Function to accept experience
+    {
+        cout << "Enter Years of Experience: "; // Display message
+        cin >> years;                         // Accept experience from user
+    }
+};
+
+// Derived class inheriting from both Employee and Experience
+class SeniorEmployee : public Employee, public Experience
+{
+public:
+    void checkEligibility()         // Function to check senior position eligibility
+    {
+        cout << "\nEmployee ID: " << empId << endl;       // Display employee ID
+        cout << "Employee Name: " << name << endl;        // Display employee name
+        cout << "Experience: " << years << " years" << endl; // Display experience
+
+        if (years >= 5)              // Check if experience is 5 years or more
+        {
+            cout << "Eligible for Senior Position." << endl; // Display eligible message
+        }
+        else                          // Execute if experience is less than 5 years
+        {
+            cout << "Not Eligible for Senior Position." << endl; // Display not eligible message
+        }
+    }
+};
+
+// Main function where program execution begins
+int main()
+{
+    SeniorEmployee emp;              // Create an object of SeniorEmployee class
+
+    emp.getBasicInfo();              // Call function to accept basic employee information
+    emp.getExperience();             // Call function to accept experience information
+    emp.checkEligibility();          // Call function to check senior position eligibility
+
+    return 0;                        // Return 0 to indicate successful program execution
+}
